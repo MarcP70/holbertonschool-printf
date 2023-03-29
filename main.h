@@ -4,11 +4,10 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 
-print_t forma[] = {
-	{"c", print_char},
-	{"s", print_string},
-	{"d", print_int},
-	{"i", print_int},
-};
+typedef struct printer
+{
+	char *symbol;
+	int (*function)(va_list arg);
+} printer_t;
 
 #endif
