@@ -33,6 +33,8 @@ int _printf(const char *format, ...)
 			len_format++;
 		va_start(args, format);
 		i = 0;
+		if (*(format + i) == '%' && len_format == 1)
+			return (-1);
 		while (*(format + i))
 		{
 			if (*(format + i) != '%')
