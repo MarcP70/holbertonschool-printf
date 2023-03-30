@@ -1,7 +1,11 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "main.h"
-
+/**
+ * _print_int - Print integer number
+ * @arg: number to print
+ * Return: lenght of the number
+ */
 int _print_int(va_list arg)
 {
 	int j, num, number;
