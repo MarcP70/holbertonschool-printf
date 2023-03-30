@@ -1,3 +1,16 @@
+/*
+ * File: _print_char.c
+ * Auth: Lecueyer Gaetan
+ *       Marc Pourias
+ *       Chaherdine Abdou
+ */
+
+/**
+ * _printf - Prints anything passed to the function
+ * @format: the list of types of arguments passed to the function
+ * Return: the lenght of the format + the lenght of any arguments
+ */
+
 #include <stdarg.h>
 #include "main.h"
 
