@@ -8,7 +8,7 @@
 /**
  * print_char - Prints a char.
  * @char: is the variable pointed to by the string
- * @arg: letter = arguments of int
+ * @arg: letter to print
  */
 int _print_char(va_list arg)
 {
