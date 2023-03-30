@@ -1,3 +1,4 @@
+
 /*
  * File: _print_char.c
  * Auth: Lecueyer Gaetan
@@ -7,7 +8,6 @@
 
 /**
  * print_char - Prints a char.
- * @char: is the variable pointed to by the string
  * @arg: letter to print
  */
 int _print_char(va_list arg)

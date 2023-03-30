@@ -1,7 +1,16 @@
+/*
+ * File: 3-print_all.c
+ * Auth: Lecueyer Gaetan
+ */
 #include <stdarg.h>
 #include <stddef.h>
 #include "main.h"
 
+/**
+ * print_string - Prints a string.  
+ * @arg: A list of arguments pointing to
+ *       the string to be printed.
+ */
 int _print_string(va_list arg)
 {
 	char *str;
