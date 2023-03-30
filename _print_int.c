@@ -1,3 +1,10 @@
+/*
+ * File: _print_int.c
+ * Auth: Lecueyer Gaetan
+ *       Marc Pourias
+ *       Chaherdine Abdou
+ */
+
 #include <unistd.h>
 #include <stdlib.h>
 #include "main.h"
