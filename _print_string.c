@@ -1,5 +1,5 @@
 /*
- * File: 3-print_all.c
+ * File: _print_string.c
  * Auth: Lecueyer Gaetan
  */
 #include <stdarg.h>
