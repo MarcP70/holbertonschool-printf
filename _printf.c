@@ -8,10 +8,10 @@ int _printf(const char *format, ...)
 	int nb_symbols = 4;
 	va_list args;
 	printer_t funcs[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"d", print_int},
-		{"i", print_int}
+		{"c", _print_char},
+		{"s", _print_string},
+		{"d", _print_int},
+		{"i", _print_int}
 	};
 
 	if (format)
