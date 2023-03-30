@@ -1,5 +1,7 @@
 #include <unistd.h>
+#include <stdlib.h>
 #include "main.h"
+
 int _print_int(va_list arg)
 {
 	int j, num, number;
