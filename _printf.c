@@ -11,8 +11,6 @@
  * Return: the lenght of the format + the lenght of any arguments
  */
 
-#include <stdarg.h>
-#include "main.h"
 int _printf(const char *format, ...)
 {
 	int i, j, not_found;
