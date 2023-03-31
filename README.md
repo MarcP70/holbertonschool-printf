@@ -102,6 +102,6 @@ Here are the  specifiers that we can use in the _printf()  and compare with the 
 
 ### Authors:
 ##
-Lecuyer Gaetan
-Pourias Marc
-Abdou Chaherdine
+- Lecuyer Gaetan
+- Pourias Marc
+- Abdou Chaherdine
