@@ -15,7 +15,8 @@
  */
 int _print_int(va_list arg)
 {
-	int j, num, number;
+	int j;
+	long int num, number;
 	int i = 0, len = 0, sign = 0;
 	char *array;
 
