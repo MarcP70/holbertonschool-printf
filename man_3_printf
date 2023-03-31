@@ -1,0 +1,110 @@
+.\" Manpage for _printf
+.TH _PRINTF 3  2023-03-30 "GNU" "Linux Programmer's Manual"
+.SH NAME
+_printf, _print_int, _print_string, _print_char, _putchar \- formatted output conversion
+.SH SYNOPSIS
+
+.B #include \ "main.h"
+.PP
+.nf
+.BI "typedef struct printer
+.BI "{
+.BI "	char *symbol;
+.BI "	int (*function)(va_list arg);
+.BI "} printer_t;
+
+.B #include <unistd.h>
+.PP
+.BI "int _putchar(char c);
+
+.B #include <stdarg.h>
+.PP
+.BI "int _printf(const char *format, ...);
+.BI "int _print_string(va_list arg);
+.BI "int _print_int(va_list arg);
+.BI "int _print_char(va_list arg);
+.PP
+
+.SH DESCRIPTION
+The functions
+.BR _printf ()
+write output to
+.IR stdout ,
+the standard output stream;
+.BR The function
+.BR _print_char (),
+.BR _print_string ()
+and
+.BR _print_int (),
+which convert the data and pass it to the function
+.BR _putchar ()
+for display it.
+.PP
+
+The function
+.BR _print_char ()
+prints a character.
+.PP
+
+The function
+.BR _print_string ()
+prints a string of characters.
+.PP
+The function
+.BR _print_int ()
+prints an integer or a decimal number.
+
+.SS Conversion specifiers
+A character that specifies the type of conversion to be applied.
+The conversion specifiers and their meanings are:
+.TP
+
+.BR d ", " i
+The
+.I int
+argument is converted into a dynamic character allocation array using the malloc
+function. This array is then printed element by element.
+.TP
+
+.B c
+The
+.I char
+argument is not converted and it was printed directly.
+.TP
+
+.B s
+The
+.I string
+is not converted but is considered an array and is browsed to be displayed
+element by element.
+
+
+.SH RETURN VALUE
+Upon successful return, these functions return the number of characters
+printed (excluding the null byte used to end output to strings).
+Return (-1) if the format is NULL.
+
+.SH NOTES
+This project was created in five days.
+
+.SH BUGS
+When a negative interger with MIN value, the program return wrong result.
+
+.SH EXAMPLE
+_printf("%i", 3);  => 3
+.TP
+_printf("%c", 'H'); => H
+.TP
+_printf("%s", "Holberton"); => Holberton
+.TP
+len = _printf("Holberton"); => Holberton
+.TP
+_printf("%d", len); => 9
+
+.SH AUTHORS
+Chaherdine Abdou // Marc Pourias // Gaëtan Lecuyer
+
+.SH COLOPHON
+This
+.I page
+was created for Holberton's printf project.
