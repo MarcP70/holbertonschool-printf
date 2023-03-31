@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 				if (not_found == 1)
 				{
 					_putchar('%');
-					if (*(format + (i + 1)) && *(format + (i + 1)) != '%')
+					if (*(format + (i + 1)) != '%')
 					{
 						_putchar(*(format + (i + 1)));
 						len_format++;
