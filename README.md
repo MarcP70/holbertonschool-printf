@@ -99,3 +99,9 @@ Here are the  specifiers that we can use in the _printf()  and compare with the 
 ### f. Flowchart
 
 ![image](flowchart.jpg)
+
+### Authors:
+##
+Lecuyer Gaetan
+Pourias Marc
+Abdou Chaherdine
