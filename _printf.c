@@ -13,7 +13,6 @@
 
 #include <stdarg.h>
 #include "main.h"
-
 int _printf(const char *format, ...)
 {
 	int i, j, not_found;
@@ -37,11 +36,7 @@ int _printf(const char *format, ...)
 			return (-1);
 		while (*(format + i))
 		{
-			if (*(format + i) != '%')
-			{
-				_putchar(*(format + i));
-				i++;
-			} else
+			if (*(format + i) == '%')
 			{
 				j = 0;
 				not_found = 1;
@@ -57,9 +52,19 @@ int _printf(const char *format, ...)
 				if (not_found == 1)
 				{
 					_putchar('%');
-					len_format = len_format - 1;
+					if (*(format + (i + 1)))
+					{
+						_putchar(*(format + (i + 1)));
+						len_format++;
+					}
+					len_format--;
 				}
 				i = i + 2;
+			}
+			else
+			{
+				_putchar(*(format + i));
+				i++;
 			}
 		}
 		va_end(args);
