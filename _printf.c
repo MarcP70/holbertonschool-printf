@@ -10,65 +10,50 @@
  * @format: the list of types of arguments passed to the function
  * Return: the lenght of the format + the lenght of any arguments
  */
-
+#include <stddef.h>
 #include <stdarg.h>
 #include "main.h"
 int _printf(const char *format, ...)
 {
-	int i, j, not_found;
-	int len_format = 0;
-	int nb_symbols = 4;
-	va_list args;
-	printer_t funcs[] = {
-		{"c", _print_char},
-		{"s", _print_string},
-		{"d", _print_int},
-		{"i", _print_int}
-	};
 
-	if (format)
+	int len_format = 0;
+	va_list args;
+
+	if (format == NULL)
+		return (-1);
+
+
+	va_start(args, format);
+
+	while (*format != '\0')
 	{
-		while (format[len_format])
-			len_format++;
-		va_start(args, format);
-		i = 0;
-		if (*(format + i) == '%' && len_format == 1)
-			return (-1);
-		while (*(format + i))
+		if (*format == '%')
 		{
-			if (*(format + i) == '%')
+			format++;
+			switch (*format)
 			{
-				j = 0;
-				not_found = 1;
-				while (j < nb_symbols)
-				{
-					if (*(format + (i + 1)) == *(funcs[j].symbol))
-					{
-						len_format = (len_format - 2) + funcs[j].function(args);
-						not_found = 0;
-					}
-					j++;
-				}
-				if (not_found == 1)
-				{
-					_putchar('%');
-					if (*(format + (i + 1)) != '%')
-					{
-						_putchar(*(format + (i + 1)));
-						len_format++;
-					}
-					len_format--;
-				}
-				i = i + 2;
-			}
-			else
-			{
-				_putchar(*(format + i));
-				i++;
+			case 'c':
+				len_format += _print_char(args);
+				break;
+			case 's':
+				len_format += _print_string(args);
+				break;
+			case 'd':
+			case 'i':
+				len_format += _print_int(args);
+				break;
+			case '%':
+				len_format += _putchar('%');
+				break;
+			default:
+				len_format += _putchar('%') + _putchar(*format);
+				break;
 			}
 		}
-		va_end(args);
-		return (len_format);
+		else
+			len_format += _putchar(*format);
+		format++;
 	}
-	return (-1);
+	va_end(args);
+	return (len_format);
 }
