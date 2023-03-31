@@ -69,7 +69,8 @@ int main(void)
 
     return (0);
     }
-    ```
+
+```
 
 Compilation :
 
@@ -80,12 +81,10 @@ gcc -Wall -Werror -Wextra -pedantic *.c -std=gnu89 -Wno-format *.c -o test
 Output :
 
 ```
-
 $ ./test
 Let's try to printf a simple sentence.
 String:[I am a string !]
 $
-
 ```
 Here are the  specifiers that we can use in the _printf()  and compare with the charactere after '%'
 
